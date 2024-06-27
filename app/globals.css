@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-[#010103];
+    @apply text-blackish;
   }
 
   body {

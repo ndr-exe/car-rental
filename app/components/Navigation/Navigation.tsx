@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Logo from '@/public/Navigation/logo.png';
 import MobileNav from './MobileNav';
-import FullNav from '../FullNav';
+import FullNav from './FullNav';
 import UserOptions from './UserOptions';
 import Link from 'next/link';
 
