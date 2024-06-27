@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Rubik } from 'next/font/google';
 import './globals.css';
+import Navigation from './components/Navigation/Navigation';
 
-const inter = Inter({ subsets: ['latin'] });
+const rubik = Rubik({ subsets: ['latin'], style: 'normal', weight: ['400', '500', '600'] });
 
 export const metadata: Metadata = {
   title: 'Car Rental Website',
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={rubik.className}>
+        <div className="max-w-screen-xl mx-auto">
+          <Navigation />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

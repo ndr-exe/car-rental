@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-[#010103];
+  }
+
+  body {
+    @apply bg-[#f8f8f8];
+  }
+}
+
+@layer utilities {
+}
+
+@layer components {
+  .button-primary {
+    @apply text-white bg-primary rounded-[3px];
+    box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.35);
+    transition: all 0.3s;
+  }
+  .button-primary:hover {
+    box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.5);
+    @apply bg-primary-dark;
+  }
+}
