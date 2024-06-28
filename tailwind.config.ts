@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'header-image': 'url(../public/Header/header-bg.png)',
       },
       colors: {
         primary: {
@@ -28,6 +29,10 @@ const config: Config = {
           DEFAULT: '#010103',
           dark: '#fa4226',
         },
+      },
+      screens: {
+        xs: '450px',
+        med: '800px',
       },
     },
   },
