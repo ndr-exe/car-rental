@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Header = () => {
   return (
     <div>
-      <header className="px-6 h-svh flex items-center relative">
+      <header className="px-6 h-[96svh] flex items-center relative">
         <div className="xs:max-w-[500px] mt-12 mx-auto med:mx-0 med:mr-auto">
           <div className="relative z-20">
             <h4 className="text-[1.4rem] font-bold text-center med:text-start ">

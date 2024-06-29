@@ -8,9 +8,12 @@ import DateSecond from '@mui/icons-material/EventRounded';
 const BookingForm = () => {
   return (
     <section className={`${poppins.className}  px-6  mx-auto `}>
-      <div className="bg-booking-form-bg bg-cover bg-center bg-white px-6 pt-10 pb-12 rounded-md shadow-lg flex flex-col xs:pl-12 xs:pr-11">
+      <div className="bg-booking-form-bg bg-cover bg-center bg-white px-6 pt-10 pb-12 rounded-md shadow-lg flex flex-col xs:pl-14 xs:pr-11 xs:pb-12 xs:pt-10">
         <h2 className="text-2xl font-bold mb-7">Book a car</h2>
-        <form action="" className="flex flex-col gap-5">
+        <form
+          action=""
+          className="flex flex-col gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:pb-3.5"
+        >
           <div className="flex flex-col gap-3">
             <label htmlFor="type" className="font-semibold flex items-center gap-1">
               <CarIcon className="text-3xl" />
@@ -103,7 +106,7 @@ const BookingForm = () => {
             />
           </div>
           <button
-            className={`${rubik.className} !rounded-none button-primary text-lg font-medium py-[13px]`}
+            className={`${rubik.className} !rounded-none button-primary text-lg font-medium py-[13px] sm:self-end `}
           >
             Search
           </button>

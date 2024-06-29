@@ -7,6 +7,7 @@ export default function Home() {
     <main className="">
       <Header />
       <BookingForm />
+      <section className="h-96 w-full"></section>
     </main>
   );
 }
