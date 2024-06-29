@@ -49,7 +49,7 @@ const Header = () => {
           className="hidden med:block w-[65%] max-w-[832px] h-auto absolute right-0 bottom-[calc(50%-20px)] translate-y-1/2"
         />
       </header>
-      <div className="w-[680px] h-[870px] absolute top-0 right-0 -z-20 hidden med:block bg-header-image"></div>
+      <div className="w-[680px] h-[870px] absolute top-0 right-0 -z-20 hidden med:block bg-header-bg"></div>
     </div>
   );
 };

@@ -11,7 +11,8 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'header-image': 'url(../public/Header/header-bg.png)',
+        'header-bg': 'url(../public/Header/header-bg.png)',
+        'booking-form-bg': 'url(../public/BookingForm/book-bg.png)',
       },
       colors: {
         primary: {
@@ -27,6 +28,11 @@ const config: Config = {
         blackish: {
           light: '#67e8f9',
           DEFAULT: '#010103',
+          dark: '#fa4226',
+        },
+        formInput: {
+          light: '#67e8f9',
+          DEFAULT: '#ababab',
           dark: '#fa4226',
         },
       },
