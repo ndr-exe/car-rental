@@ -16,10 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.className}`}>
-        <div className="max-w-[calc(1280px+50px)] mx-auto">
-          <Navigation />
-          {children}
-        </div>
+        <Navigation />
+        {children}
       </body>
     </html>
   );

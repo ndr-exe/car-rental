@@ -1,118 +1,210 @@
-import { poppins } from '@/app/fonts';
+'use client';
 import { rubik } from '@/app/fonts';
 import CarIcon from '@mui/icons-material/TimeToLeave';
 import LocationTag from '@mui/icons-material/Room';
 import DateFirst from '@mui/icons-material/TodayRounded';
 import DateSecond from '@mui/icons-material/EventRounded';
+import { useEffect, useRef, useState } from 'react';
+import FormError from './FormError';
+
+const cars = {
+  audi: 'Audi A1 S-Line',
+  vwGolf: 'VW Golf 6',
+  toyota: 'Toyota Camry',
+  bmw: 'BMW 320 ModernLine',
+  mercedes: 'Mercedes-Benz GLK',
+  vwPassat: 'VW Passat CC',
+};
+
+const cities = ['Tbilisi', 'Rustavi', 'Kutaisi', 'Batumi', 'Zugdidi', 'Sokhumi'];
 
 const BookingForm = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [fieldsAreMissing, setFieldsAreMissing] = useState(false);
+  const dateRef = useRef<string | null>(null);
+  const [formState, setFormState] = useState(() => {
+    return {
+      car: '',
+      pickUpCity: '',
+      dropOffCity: '',
+      pickUpDate: '',
+      dropOffDate: '',
+    };
+  });
+
+  useEffect(() => {
+    const date = new Date().toISOString().slice(0, 10);
+    console.log(date);
+    dateRef.current = date;
+  }, []);
+
+  const handleSubmit = () => {
+    if (!formRef.current!.checkValidity()) setFieldsAreMissing(true);
+  };
+
+  const handleCloseError = () => {
+    setFieldsAreMissing(false);
+  };
+
   return (
-    <section className={`${poppins.className}  px-6  mx-auto `}>
-      <div className="bg-booking-form-bg bg-cover bg-center bg-white px-6 pt-10 pb-12 rounded-md shadow-lg flex flex-col xs:pl-14 xs:pr-11 xs:pb-12 xs:pt-10">
-        <h2 className="text-2xl font-bold mb-7">Book a car</h2>
-        <form
-          action=""
-          className="flex flex-col gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:pb-3.5"
-        >
-          <div className="flex flex-col gap-3">
-            <label htmlFor="type" className="font-semibold flex items-center gap-1">
-              <CarIcon className="text-3xl" />
-              <span>
-                Select Your Car Type <span className="text-primary text-lg">*</span>
-              </span>
-            </label>
-            <select
-              name="type"
-              id="type"
-              className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
-            >
-              <option>Select your car Type</option>
-              <option>Audi A1 S-Line</option>
-              <option>VW Golf 6</option>
-              <option>Toyota Camry</option>
-              <option>BMW 320 ModernLine</option>
-              <option>Mercedes-Benz GLK</option>
-              <option>VW Passat CC</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="" className="font-semibold flex items-center gap-1">
-              <LocationTag className="text-3xl " />
-              <span>
-                Pick-up <span className="text-primary text-lg">*</span>
-              </span>
-            </label>
-            <select
-              name=""
-              id=""
-              className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
-            >
-              <option value="">Select pick up location</option>
-              <option value="">Tbilisi</option>
-              <option value="">Rustavi</option>
-              <option value="">Kutaisi</option>
-              <option value="">Batumi</option>
-              <option value="">Zugdidi</option>
-              <option value="">Sokhumi</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="" className="font-semibold flex items-center gap-1">
-              <LocationTag className="text-3xl" />
-              <span>
-                Drop-off <span className="text-primary text-lg">*</span>
-              </span>
-            </label>
-            <select
-              name=""
-              id=""
-              className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
-            >
-              <option value="">Select drop off location</option>
-              <option value="">Tbilisi</option>
-              <option value="">Rustavi</option>
-              <option value="">Kutaisi</option>
-              <option value="">Batumi</option>
-              <option value="">Zugdidi</option>
-              <option value="">Sokhumi</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="" className="font-semibold flex items-center gap-1">
-              <DateFirst className="text-2xl" />
-              <span>
-                Pick-up <span className="text-primary text-lg">*</span>
-              </span>
-            </label>
-            <input
-              type="date"
-              name=""
-              id=""
-              className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="" className="font-semibold flex items-center gap-1">
-              <DateSecond className="text-2xl " />
-              <span>
-                Drop-of <span className="text-primary text-lg">*</span>
-              </span>
-            </label>
-            <input
-              type="date"
-              name=""
-              id=""
-              className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
-            />
-          </div>
-          <button
-            className={`${rubik.className} !rounded-none button-primary text-lg font-medium py-[13px] sm:self-end `}
+    <>
+      {/* Error Message */}
+      {fieldsAreMissing && <FormError handleCloseError={handleCloseError} />}
+
+      <form
+        ref={formRef}
+        action=""
+        className="flex flex-col gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:pb-3.5 "
+      >
+        {/* Car type */}
+        <div className="flex flex-col gap-3">
+          <label htmlFor="car" className="font-semibold flex items-center gap-1">
+            <CarIcon className="text-3xl" />
+            <span>
+              Select Your Car Type <span className="text-primary text-lg">*</span>
+            </span>
+          </label>
+          <select
+            value={formState.car}
+            onChange={e =>
+              setFormState(prev => {
+                return { ...prev, car: e.target.value };
+              })
+            }
+            required
+            name="car"
+            id="car"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
           >
-            Search
-          </button>
-        </form>
-      </div>
-    </section>
+            <option value="">Select your car Type</option>
+            <option value={cars.audi}>Audi A1 S-Line</option>
+            <option value={cars.vwGolf}>VW Golf 6</option>
+            <option value={cars.toyota}>Toyota Camry</option>
+            <option value={cars.bmw}>BMW 320 ModernLine</option>
+            <option value={cars.mercedes}>Mercedes-Benz GLK</option>
+            <option value={cars.vwPassat}>VW Passat CC</option>
+          </select>
+        </div>
+
+        {/* Pick up Location */}
+        <div className="flex flex-col gap-3">
+          <label htmlFor="pickUpCity" className="font-semibold flex items-center gap-1">
+            <LocationTag className="text-3xl " />
+            <span>
+              Pick-up <span className="text-primary text-lg">*</span>
+            </span>
+          </label>
+          <select
+            value={formState.pickUpCity}
+            onChange={e =>
+              setFormState(prev => {
+                return { ...prev, pickUpCity: e.target.value };
+              })
+            }
+            required
+            name="pickUpCity"
+            id="pickUpCity"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+          >
+            <option value="">Select pick up location</option>
+            <option value={cities[0]}>Tbilisi</option>
+            <option value={cities[1]}>Rustavi</option>
+            <option value={cities[2]}>Kutaisi</option>
+            <option value={cities[3]}>Batumi</option>
+            <option value={cities[4]}>Zugdidi</option>
+            <option value={cities[5]}>Sokhumi</option>
+          </select>
+        </div>
+
+        {/* Drop off Location */}
+        <div className="flex flex-col gap-3">
+          <label htmlFor="dropOffCity" className="font-semibold flex items-center gap-1">
+            <LocationTag className="text-3xl" />
+            <span>
+              Drop-off <span className="text-primary text-lg">*</span>
+            </span>
+          </label>
+          <select
+            value={formState.dropOffCity}
+            onChange={e =>
+              setFormState(prev => {
+                return { ...prev, dropOffCity: e.target.value };
+              })
+            }
+            required
+            name="dropOffCity"
+            id="dropOffCity"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+          >
+            <option value="">Select pick up location</option>
+            <option value={cities[0]}>Tbilisi</option>
+            <option value={cities[1]}>Rustavi</option>
+            <option value={cities[2]}>Kutaisi</option>
+            <option value={cities[3]}>Batumi</option>
+            <option value={cities[4]}>Zugdidi</option>
+            <option value={cities[5]}>Sokhumi</option>
+          </select>
+        </div>
+
+        {/* Pick up Date */}
+        <div className="flex flex-col gap-3">
+          <label htmlFor="pickUpDate" className="font-semibold flex items-center gap-1">
+            <DateFirst className="text-2xl" />
+            <span>
+              Pick-up <span className="text-primary text-lg">*</span>
+            </span>
+          </label>
+          <input
+            min={dateRef.current!}
+            value={formState.pickUpDate}
+            onChange={e =>
+              setFormState(prev => {
+                return { ...prev, pickUpDate: e.target.value };
+              })
+            }
+            required
+            type="date"
+            name="pickUpDate"
+            id="pickUpDate"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+          />
+        </div>
+
+        {/* Drop off Date */}
+        <div className="flex flex-col gap-3">
+          <label htmlFor="dropOffDate" className="font-semibold flex items-center gap-1">
+            <DateSecond className="text-2xl " />
+            <span>
+              Drop-of <span className="text-primary text-lg">*</span>
+            </span>
+          </label>
+          <input
+            value={formState.dropOffDate}
+            onChange={e =>
+              setFormState(prev => {
+                return { ...prev, dropOffDate: e.target.value };
+              })
+            }
+            required
+            min={formState.pickUpDate}
+            type="date"
+            name="dropOffDate"
+            id="dropOffDate"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+          />
+        </div>
+
+        <button
+          className={`${rubik.className} !rounded-none button-primary text-lg font-medium py-[13px] sm:self-end `}
+          onClick={e => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
+          Search
+        </button>
+      </form>
+    </>
   );
 };
 

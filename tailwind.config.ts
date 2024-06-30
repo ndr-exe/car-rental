@@ -35,6 +35,10 @@ const config: Config = {
           DEFAULT: '#ababab',
           dark: '#fa4226',
         },
+        error: {
+          text: '#721c24',
+          background: '#f8d7da',
+        },
       },
       screens: {
         xs: '450px',

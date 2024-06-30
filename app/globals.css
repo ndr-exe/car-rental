@@ -6,13 +6,12 @@
   html {
     @apply text-blackish;
   }
-
-  body {
-    @apply bg-[#f8f8f8];
-  }
 }
 
 @layer utilities {
+  .container {
+    @apply max-w-[calc(1280px+50px)] mx-auto;
+  }
 }
 
 @layer components {
@@ -24,5 +23,9 @@
   .button-primary:hover {
     box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.5);
     @apply bg-primary-dark;
+  }
+
+  .header-transitional-bg {
+    background: linear-gradient(180deg, #f8f8f8 35%, #fff 90%);
   }
 }
