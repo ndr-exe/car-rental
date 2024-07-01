@@ -16,7 +16,7 @@ const config: Config = {
       },
       colors: {
         primary: {
-          light: '#67e8f9',
+          light: '#ffeae6',
           DEFAULT: '#ff4d30',
           dark: '#fa4226',
         },
@@ -26,7 +26,7 @@ const config: Config = {
           dark: '#fa4226',
         },
         blackish: {
-          light: '#67e8f9',
+          light: '#777',
           DEFAULT: '#010103',
           dark: '#fa4226',
         },
@@ -38,6 +38,10 @@ const config: Config = {
         error: {
           text: '#721c24',
           background: '#f8d7da',
+        },
+        success: {
+          text: '#2a6817',
+          background: '#c3fabe',
         },
       },
       screens: {

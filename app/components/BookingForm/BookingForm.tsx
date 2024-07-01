@@ -5,7 +5,8 @@ import LocationTag from '@mui/icons-material/Room';
 import DateFirst from '@mui/icons-material/TodayRounded';
 import DateSecond from '@mui/icons-material/EventRounded';
 import { useEffect, useRef, useState } from 'react';
-import FormError from './FormError';
+import FormMessage from './FormMessage';
+import BookingModal from './BookingModal';
 
 const cars = {
   audi: 'Audi A1 S-Line',
@@ -21,6 +22,8 @@ const cities = ['Tbilisi', 'Rustavi', 'Kutaisi', 'Batumi', 'Zugdidi', 'Sokhumi']
 const BookingForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [fieldsAreMissing, setFieldsAreMissing] = useState(false);
+  const [showConfirmMessage, setShowConfirmMessage] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dateRef = useRef<string | null>(null);
   const [formState, setFormState] = useState(() => {
     return {
@@ -39,17 +42,38 @@ const BookingForm = () => {
   }, []);
 
   const handleSubmit = () => {
+    showConfirmMessage && setShowConfirmMessage(false);
     if (!formRef.current!.checkValidity()) setFieldsAreMissing(true);
+    else {
+      setFieldsAreMissing(false);
+      setIsModalOpen(true);
+    }
   };
 
-  const handleCloseError = () => {
-    setFieldsAreMissing(false);
+  const handleModalFormSuccess = () => {
+    setIsModalOpen(false);
+    setShowConfirmMessage(true);
   };
 
   return (
     <>
       {/* Error Message */}
-      {fieldsAreMissing && <FormError handleCloseError={handleCloseError} />}
+      {fieldsAreMissing && (
+        <FormMessage
+          closeMessage={() => setFieldsAreMissing(false)}
+          message="All fields required!"
+          messageType="error"
+        />
+      )}
+
+      {/* Success Message */}
+      {showConfirmMessage && (
+        <FormMessage
+          closeMessage={() => setShowConfirmMessage(false)}
+          message="Check your email to confirm an order."
+          messageType="success"
+        />
+      )}
 
       <form
         ref={formRef}
@@ -204,6 +228,16 @@ const BookingForm = () => {
           Search
         </button>
       </form>
+
+      {/* Reservation Modal */}
+      {isModalOpen && (
+        <BookingModal
+          isModalOpen={isModalOpen}
+          handleModalClose={() => setIsModalOpen(false)}
+          handleModalFormSuccess={handleModalFormSuccess}
+          reservationDetails={formState as ReservationDetails}
+        />
+      )}
     </>
   );
 };
