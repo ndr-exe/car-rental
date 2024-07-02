@@ -1,6 +1,5 @@
 import { poppins } from '@/app/fonts';
 import { rubik } from '@/app/fonts';
-import Box from '@mui/material/Box';
 import Info from '@mui/icons-material/InfoOutlined';
 import Modal from '@mui/material/Modal';
 import Close from '@mui/icons-material/CloseRounded';
@@ -9,16 +8,6 @@ import LocationTag from '@mui/icons-material/Room';
 import { getShowcaseCarImg } from '@/lib/selectShowcaseCarImg';
 import Image from 'next/image';
 import PersonalInfoFields from './PersonalInfoFields';
-
-const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  // width: 400,
-  transform: 'translate(-50%, -50%)',
-  // bgcolor: 'background.paper',
-  // boxShadow: 24,
-};
 
 const BookingModal = ({
   isModalOpen,
@@ -39,8 +28,10 @@ const BookingModal = ({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <section className={`${poppins.className} w-screen h-screen bg-white overflow-scroll`}>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <section
+            className={`${poppins.className} w-screen h-screen md:h-[90vh] bg-white overflow-scroll max-w-[850px]`}
+          >
             <div className="">
               <div className="flex justify-between items-center px-4 py-2.5 bg-primary text-white">
                 <h2 className="text-2xl font-bold">COMPLETE RESERVATION</h2>
@@ -59,9 +50,9 @@ const BookingModal = ({
                 </p>
               </div>
             </div>
-            <div className="p-7">
-              <h4 className="text-primary text-lg font-bold text-center mb-5">Location & Date</h4>
+            <div className="p-7 sm:flex">
               <div className="flex flex-col items-center gap-8 w-max mx-auto">
+                <h4 className="text-primary text-lg font-bold text-center mb-1">Location & Date</h4>
                 <div className="self-stretch flex flex-col gap-0.5">
                   <h5 className="font-bold text-[0.9375rem]">
                     <Clock /> Pick-Up Date & Time
@@ -107,7 +98,7 @@ const BookingModal = ({
                   </p>
                 </div>
               </div>
-              <div className="mt-9 flex flex-col gap-7 ">
+              <div className="mt-9 flex flex-col gap-7 sm:w-1/2">
                 <h5 className="text-lg font-bold text-center">
                   Car -<span className="text-primary">{reservationDetails.car}</span>
                 </h5>
@@ -121,27 +112,29 @@ const BookingModal = ({
             </div>
             <div className="px-8 py-8">
               <h3 className="text-primary text-lg font-bold mb-5">PERSONAL INFORMATION</h3>
-              <form action="" className="flex flex-col gap-6">
+              <form action="" className="flex flex-col gap-6 sm:inputGrid ">
                 <PersonalInfoFields />
-                <div className="flex gap-2.5 mt-4">
-                  <input type="checkbox" name="notifyMe" id="notifyMe" />
-                  <label htmlFor="notifyMe" className="text-[#565454]">
-                    Please send me latest news and updates
-                  </label>
+                <div className="flex flex-col gap-5 col-span-2">
+                  <div className="flex gap-2.5 mt-4">
+                    <input type="checkbox" name="notifyMe" id="notifyMe" />
+                    <label htmlFor="notifyMe" className="text-[#565454]">
+                      Please send me latest news and updates
+                    </label>
+                  </div>
+                  <button
+                    className={`${rubik.className} button-primary px-5 py-3.5 text-2xl font-bold w-fit mx-auto mt-2`}
+                    onClick={e => {
+                      e.preventDefault();
+                      handleModalFormSuccess();
+                    }}
+                  >
+                    Reserve Now
+                  </button>
                 </div>
-                <button
-                  className={`${rubik.className} button-primary px-5 py-3.5 text-2xl font-bold w-fit mx-auto mt-2`}
-                  onClick={e => {
-                    e.preventDefault();
-                    handleModalFormSuccess();
-                  }}
-                >
-                  Reserve Now
-                </button>
               </form>
             </div>
           </section>
-        </Box>
+        </div>
       </Modal>
     </div>
   );

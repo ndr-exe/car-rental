@@ -8,8 +8,8 @@ const ModalInput = ({
   inputType: string;
 }) => {
   return (
-    <div className="flex flex-col gap-1">
-      <label htmlFor={label} className="text-blackish-light font-medium ">
+    <div className="flex flex-col gap-1 infoInput">
+      <label htmlFor={label} className="text-blackish-light font-medium  ">
         {label}&nbsp;
         <span className="text-primary text-xl">*</span>
       </label>
