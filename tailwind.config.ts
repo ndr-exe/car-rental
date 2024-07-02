@@ -47,6 +47,7 @@ const config: Config = {
       screens: {
         xs: '450px',
         med: '800px',
+        medPlus: '850px',
       },
     },
   },
