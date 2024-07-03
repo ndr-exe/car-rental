@@ -19,3 +19,17 @@ type Car =
   | 'BMW 320 ModernLine'
   | 'Mercedes-Benz GLK'
   | 'VW Passat CC';
+
+type CarDetails = {
+  fullTitle: string;
+  model: string;
+  mark: string;
+  year: number;
+  doors: string;
+  ac: boolean;
+  transmission: string;
+  fuel: string;
+  rent: number;
+  showcaseImg: StaticImageData;
+  id: number;
+};

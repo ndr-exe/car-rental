@@ -6,7 +6,7 @@ import stepThreeIcon from '@/public/StepsSection/icon3.png';
 
 const StepsSection = () => {
   return (
-    <section className="container py-36 px-6">
+    <section className="container pt-36 pb-14 px-6">
       <div>
         <h3 className="font-medium text-2xl text-center">Plan your trip now</h3>
         <h2
