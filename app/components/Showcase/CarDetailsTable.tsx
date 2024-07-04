@@ -3,7 +3,9 @@ import ReserveNowButton from './ReserveNowButton';
 
 const CarDetailsTable = ({ carDetails }: { carDetails: CarDetails }) => {
   return (
-    <div className={`${poppins.className} w-[15.5rem] text-sm mx-auto flex flex-col `}>
+    <div
+      className={`${poppins.className} w-[15.5rem] text-sm mx-auto flex flex-col med:basis-[31%] med:self-end med:mx-0 lg:basis-1/3 lg:self-start`}
+    >
       <p className="bg-primary flex items-center h-max py-3.5 px-5 gap-3.5">
         <span className="text-white text-[28px] font-bold">${carDetails.rent}</span>
         <span className="text-white text-[18px]"> / rent per day</span>
