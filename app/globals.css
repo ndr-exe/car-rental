@@ -64,4 +64,8 @@
   .infoInput:nth-of-type(8) {
     grid-area: zip;
   }
+
+  .FeaturesSection {
+    background: url('../public/FeaturesSection/bg.png') -320px 300px / cover no-repeat;
+  }
 }
