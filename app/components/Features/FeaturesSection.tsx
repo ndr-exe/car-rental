@@ -8,13 +8,13 @@ import Feature from './Feature';
 
 const FeaturesSection = () => {
   return (
-    <section className="pt-20">
+    <section className="pt-20 container lg:px-6">
       <FeaturesSectionBanner />
-      <div className="py-28 flex flex-col gap-14 FeaturesSection">
-        <div className="">
-          <Image src={main} alt="three cars showcase" />
+      <div className="py-28 flex flex-col gap-14 FeaturesSection lg:flex-row lg:flex-wrap ">
+        <div className="mx-auto max-w-[900px] w-full ">
+          <Image src={main} alt="three cars showcase" className="w-full h-auto object-cover" />
         </div>
-        <div className="text-center px-6">
+        <div className="text-center px-6 max-w-[500px] mx-auto sm:px-0 lg:text-left">
           <h4 className="text-[22px] font-semibold mb-2">Why Choose Us</h4>
           <h2 className={`${poppins.className} text-[42px] font-bold leading-tight mb-5 `}>
             Best valued deals you will ever find
