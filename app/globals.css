@@ -68,4 +68,9 @@
   .FeaturesSection {
     background: url('../public/FeaturesSection/bg.png') -320px 300px / cover no-repeat;
   }
+  @media only screen and (min-width: 1024px) {
+    .FeaturesSection {
+      background: url('../public/FeaturesSection/bg.png') -120px 270px / cover no-repeat;
+    }
+  }
 }
