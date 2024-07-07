@@ -73,4 +73,18 @@
       background: url('../public/FeaturesSection/bg.png') -120px 270px / cover no-repeat;
     }
   }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .appearTestimonial {
+    display: flex;
+    animation: appear 2s ease-in;
+  }
 }

@@ -3,6 +3,7 @@ import BookingFormWrapper from './components/BookingForm/BookingFormWrapper';
 import StepsSection from './components/Steps/StepsSection';
 import ShowcaseSection from './components/Showcase/ShowcaseSection';
 import FeaturesSection from './components/Features/FeaturesSection';
+import TestimonialsSection from './components/Testimonials/TestimonialsSection';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <StepsSection />
       <ShowcaseSection />
       <FeaturesSection />
+      <TestimonialsSection />
     </main>
   );
 }

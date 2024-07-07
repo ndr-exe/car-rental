@@ -12,7 +12,13 @@ const Step = ({
 }) => {
   return (
     <li className="p-2.5 max-w-[400px] medPlus:max-w-none lg:px-14 medPlus:w-2/5 last:medPlus:mx-auto">
-      <Image src={img} alt={heading} width={170} height={170} className="mx-auto" />
+      <Image
+        src={img}
+        alt={heading}
+        width={170}
+        height={170}
+        className="mx-auto w-[170px] h-[170px]"
+      />
       <div>
         <h3 className={`${poppins.className} text-2xl font-bold text-center mb-2.5`}>{heading}</h3>
         <p className="text-secondary text-center leading-normal">{description}</p>
