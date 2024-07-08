@@ -33,3 +33,11 @@ type CarDetails = {
   showcaseImg: StaticImageData;
   id: number;
 };
+
+type Testimonial = {
+  text: string;
+  author: string;
+  authorPhoto: StaticImageData;
+  location: string;
+  id: number;
+};

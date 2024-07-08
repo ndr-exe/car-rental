@@ -82,9 +82,21 @@
       opacity: 1;
     }
   }
+  @keyframes vanish {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 
   .appearTestimonial {
     display: flex;
-    animation: appear 2s ease-in;
+    animation: appear 0.75s ease-in;
+  }
+
+  .vanishing {
+    animation: vanish 0.75s;
   }
 }

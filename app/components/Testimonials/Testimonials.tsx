@@ -8,9 +8,17 @@ import CircleIcon from '@mui/icons-material/Circle';
 
 const Testimonials = () => {
   const [selectedTestimonialPage, setSelectedTestimonialPage] = useState([1, 2]);
+  const [transition, setTransition] = useState(false);
+
+  const waitForTransition = async (page: number[]) => {
+    await timeout(750);
+    setTransition(false);
+    setSelectedTestimonialPage(page);
+  };
 
   const handleChange = async (page: number[]) => {
-    setSelectedTestimonialPage(page);
+    setTransition(true);
+    waitForTransition(page);
   };
 
   const activeButton = selectedTestimonialPage[0] === 1 ? 'firstPage' : 'secondPage';
@@ -23,6 +31,7 @@ const Testimonials = () => {
               key={testimonial.id}
               active={selectedTestimonialPage.includes(testimonial.id)}
               testimonial={testimonial}
+              transition={transition}
             />
           );
         })}
