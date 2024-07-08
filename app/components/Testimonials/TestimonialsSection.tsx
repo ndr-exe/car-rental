@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
     <div className="bg-[#f8f8f8]">
       <div className="container py-28">
         <section className="w-full px-6">
-          <div className="max-w-[44rem] mx-auto text-center mb-12">
+          <div className="max-w-[44rem] mx-auto text-center mb-12 lg:mb-20">
             <h4 className="text-[1.38rem] font-medium">Reviewed by People</h4>
             <h2 className={`${poppins.className} font-bold text-[2.65rem] mb-3.5`}>
               Client&apos;s Testimonials

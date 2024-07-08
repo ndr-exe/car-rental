@@ -24,7 +24,7 @@ const Testimonials = () => {
   const activeButton = selectedTestimonialPage[0] === 1 ? 'firstPage' : 'secondPage';
   return (
     <div>
-      <ul className="flex flex-col gap-14">
+      <ul className="flex flex-col items-center lg:flex-row lg:justify-center gap-14 lg:gap-10">
         {testimonials.map(testimonial => {
           return (
             <Testimonial
@@ -36,10 +36,10 @@ const Testimonials = () => {
           );
         })}
       </ul>
-      <div className="flex justify-center gap-1 mt-4">
+      <div className="flex justify-center gap-1 mt-4 lg:mt-12">
         <button
           disabled={activeButton === 'firstPage'}
-          onClick={() => selectedTestimonialPage[0] !== 1 && handleChange([1, 2])}
+          onClick={() => handleChange([1, 2])}
           className={`${
             activeButton === 'firstPage' ? 'text-primary opacity-100' : 'text-secondary opacity-30'
           }`}
@@ -48,7 +48,7 @@ const Testimonials = () => {
         </button>
         <button
           disabled={activeButton === 'secondPage'}
-          onClick={() => selectedTestimonialPage[0] !== 3 && handleChange([3, 4])}
+          onClick={() => handleChange([3, 4])}
           className={`${
             activeButton === 'secondPage' ? 'text-primary opacity-100' : 'text-secondary opacity-30'
           }`}
