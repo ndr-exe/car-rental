@@ -13,8 +13,8 @@ const Faqs = () => {
   };
 
   return (
-    <div className="min-h-[800px]">
-      <ul className="bg-white shadow-md rounded-md overflow-hidden">
+    <div className="min-h-[48rem] xs:min-h-[38rem] sm:min-h-[30rem] md:min-h-[26rem] lg:min-h-[24rem]">
+      <ul className="bg-white shadow-md rounded-md overflow-hidden max-w-[50rem] mx-auto">
         <ExpandablePanel
           panel="panel1"
           question="1. What is special about comparing rental car deals?"

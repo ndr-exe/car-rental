@@ -5,7 +5,7 @@ const FaqSection = () => {
   return (
     <div className="py-24 FaqSectionBg ">
       <section className="container px-6">
-        <div className={`${poppins.className} text-center mb-16 `}>
+        <div className={`${poppins.className} text-center mb-16 max-w-[50rem] mx-auto `}>
           <h5 className="text-[1.38rem] font-bold ">FAQ</h5>
           <h2 className="text-[2.63rem] font-bold leading-normal mb-5">
             Frequently Asked Questions
