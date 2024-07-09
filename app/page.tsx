@@ -4,6 +4,7 @@ import StepsSection from './components/Steps/StepsSection';
 import ShowcaseSection from './components/Showcase/ShowcaseSection';
 import FeaturesSection from './components/Features/FeaturesSection';
 import TestimonialsSection from './components/Testimonials/TestimonialsSection';
+import FaqSection from './components/FAQ/FaqSection';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ShowcaseSection />
       <FeaturesSection />
       <TestimonialsSection />
+      <FaqSection />
     </main>
   );
 }

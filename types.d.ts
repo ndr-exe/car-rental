@@ -41,3 +41,5 @@ type Testimonial = {
   location: string;
   id: number;
 };
+
+type Panels = 'panel1' | 'panel2' | 'panel3' | false;

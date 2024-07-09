@@ -99,4 +99,18 @@
   .vanishing {
     animation: vanish 0.75s;
   }
+
+  .FaqSectionBg {
+    background: url('../public/FAQ/car.png') 0 75% / auto no-repeat;
+  }
+
+  .FaqPanel {
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+  }
+  .PanelExpanded {
+    grid-template-rows: 1fr !important;
+  }
 }
