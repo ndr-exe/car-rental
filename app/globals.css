@@ -12,6 +12,9 @@
   .container {
     @apply max-w-[calc(1280px+50px)] mx-auto;
   }
+  .fullHDWrapper {
+    @apply max-w-[1920px] mx-auto;
+  }
 }
 
 @layer components {
@@ -112,5 +115,16 @@
   }
   .PanelExpanded {
     grid-template-rows: 1fr !important;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .DownloadMobileAppSectionBg {
+      background: url('../public/DownloadApp/appSectionBg.png') top / cover no-repeat;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .DownloadMobileAppSectionBg {
+      background: url('../public/DownloadApp/appSectionBg.png') bottom 50% left 70% / auto no-repeat;
+    }
   }
 }
