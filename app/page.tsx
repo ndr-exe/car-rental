@@ -5,6 +5,7 @@ import ShowcaseSection from './components/Showcase/ShowcaseSection';
 import FeaturesSection from './components/Features/FeaturesSection';
 import TestimonialsSection from './components/Testimonials/TestimonialsSection';
 import FaqSection from './components/FAQ/FaqSection';
+import DownloadAppSection from './components/DownloadApp/DownloadAppSection';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FeaturesSection />
       <TestimonialsSection />
       <FaqSection />
+      <DownloadAppSection />
     </main>
   );
 }
