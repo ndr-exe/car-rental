@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { rubik } from '@/app/fonts';
 import './globals.css';
 import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Car Rental Website',
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${rubik.className}`}>
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
