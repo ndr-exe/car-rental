@@ -128,4 +128,29 @@
       background: url('../public/DownloadApp/appSectionBg.png') bottom 50% left 70% / auto no-repeat;
     }
   }
+
+  .subpageHeaderBg {
+    background: url('../public/subpages/subpage-bg.png') bottom left 30% / cover no-repeat,
+      #ffffffeb;
+    background-blend-mode: screen;
+  }
+
+  @media only screen and (min-width: 640px) {
+    .subpageHeaderBg {
+      background: url('../public/subpages/subpage-bg.png') bottom left 50% / cover no-repeat,
+        #ffffffeb;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .subpageHeaderBg {
+      background: url('../public/subpages/subpage-bg.png') bottom left 75% / cover no-repeat,
+        #ffffffeb;
+    }
+  }
+
+  .subpageBanner {
+    background: url('../public/subpages/banner.png') bottom center / cover no-repeat,
+      rgba(69, 59, 50, 0.825);
+    background-blend-mode: hue;
+  }
 }
