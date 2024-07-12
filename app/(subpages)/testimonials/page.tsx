@@ -1,5 +1,11 @@
+import TestimonialsSection from '@/app/components/Testimonials/TestimonialsSection';
+
 const TestimonialPage = () => {
-  return <main className="w-full h-[50vh] bg-green-300">Testimonials</main>;
+  return (
+    <div className="py-8 sm:py-12 lg:py-24 bg-[#f8f8f8] ">
+      <TestimonialsSection />
+    </div>
+  );
 };
 
 export default TestimonialPage;
