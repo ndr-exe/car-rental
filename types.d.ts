@@ -31,6 +31,8 @@ type CarDetails = {
   fuel: string;
   rent: number;
   showcaseImg: StaticImageData;
+  image: StaticImageData;
+  rating: number;
   id: number;
 };
 

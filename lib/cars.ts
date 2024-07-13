@@ -1,4 +1,4 @@
-import { getShowcaseCarImg } from './selectShowcaseCarImg';
+import { getCarImage } from './selectCarImage';
 
 export const cars = [
   {
@@ -11,7 +11,9 @@ export const cars = [
     transmission: 'Manual',
     fuel: 'Gasoline',
     rent: 45,
-    showcaseImg: getShowcaseCarImg('Audi A1 S-Line'),
+    showcaseImg: getCarImage('Audi A1 S-Line', true),
+    image: getCarImage('Audi A1 S-Line'),
+    rating: 5,
     id: 1,
   },
   {
@@ -24,7 +26,9 @@ export const cars = [
     transmission: 'Manual',
     fuel: 'Diesel',
     rent: 37,
-    showcaseImg: getShowcaseCarImg('VW Golf 6'),
+    showcaseImg: getCarImage('VW Golf 6', true),
+    image: getCarImage('VW Golf 6'),
+    rating: 3,
     id: 2,
   },
   {
@@ -37,7 +41,9 @@ export const cars = [
     transmission: 'Automatic',
     fuel: 'Hybrid',
     rent: 30,
-    showcaseImg: getShowcaseCarImg('Toyota Camry'),
+    showcaseImg: getCarImage('Toyota Camry', true),
+    image: getCarImage('Toyota Camry'),
+    rating: 4,
     id: 3,
   },
   {
@@ -50,7 +56,9 @@ export const cars = [
     transmission: 'Manual',
     fuel: 'Diesel',
     rent: 35,
-    showcaseImg: getShowcaseCarImg('BMW 320 ModernLine'),
+    showcaseImg: getCarImage('BMW 320 ModernLine', true),
+    image: getCarImage('BMW 320 ModernLine'),
+    rating: 3,
     id: 4,
   },
   {
@@ -63,7 +71,9 @@ export const cars = [
     transmission: 'Manual',
     fuel: 'Diesel',
     rent: 50,
-    showcaseImg: getShowcaseCarImg('Mercedes-Benz GLK'),
+    showcaseImg: getCarImage('Mercedes-Benz GLK', true),
+    image: getCarImage('Mercedes-Benz GLK'),
+    rating: 4,
     id: 5,
   },
   {
@@ -76,7 +86,9 @@ export const cars = [
     transmission: 'Automatic',
     fuel: 'Gasoline',
     rent: 25,
-    showcaseImg: getShowcaseCarImg('VW Passat CC'),
+    showcaseImg: getCarImage('VW Passat CC', true),
+    image: getCarImage('VW Passat CC'),
+    rating: 5,
     id: 6,
   },
 ];

@@ -5,7 +5,7 @@ import Modal from '@mui/material/Modal';
 import Close from '@mui/icons-material/CloseRounded';
 import Clock from '@mui/icons-material/WatchLaterSharp';
 import LocationTag from '@mui/icons-material/Room';
-import { getShowcaseCarImg } from '@/lib/selectShowcaseCarImg';
+import { getCarImage } from '@/lib/selectCarImage';
 import Image from 'next/image';
 import PersonalInfoFields from './PersonalInfoFields';
 
@@ -104,7 +104,7 @@ const BookingModal = ({
                 </h5>
                 <div className=" ">
                   <Image
-                    src={getShowcaseCarImg(reservationDetails.car)}
+                    src={getCarImage(reservationDetails.car, true)}
                     alt={reservationDetails.car}
                   />
                 </div>
