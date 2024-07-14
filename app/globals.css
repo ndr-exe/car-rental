@@ -140,6 +140,9 @@
       background: url('../public/subpages/subpage-bg.png') bottom left 50% / cover no-repeat,
         #ffffffeb;
     }
+    .contactUsBg {
+      background: url('../public/contact/contact-map-bg.png') center / cover no-repeat;
+    }
   }
   @media only screen and (min-width: 1024px) {
     .subpageHeaderBg {

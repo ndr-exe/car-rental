@@ -16,32 +16,40 @@ const Footer = () => {
             meet your needs.
           </p>
           <ul className="grid gap-2.5 place-items-center sm:place-items-start">
-            <a
-              href="tel:12345678"
-              className="font-medium transition-colors hover:text-primary flex items-center gap-1.5"
-            >
-              <span>
-                <CallIcon className="text-primary" />
-              </span>
-              (123)-456-789
-            </a>
-            <a
-              href="mailto:carrental@gmail.com"
-              className="font-medium transition-colors hover:text-primary flex items-center gap-1.5"
-            >
-              <span>
-                <MailIcon className="text-primary" />
-              </span>
-              carrental@gmail.com
-            </a>
-            <a
-              href="https://xpeedstudio.com/"
-              rel="noreferrer nofollow"
-              target="_blank"
-              className="font-light transition-colors hover:text-primary flex items-center"
-            >
-              Design by XpeedStudio
-            </a>
+            <li>
+              <a
+                href="tel:12345678"
+                className="font-medium transition-colors hover:text-primary flex items-center gap-1.5"
+              >
+                <span>
+                  <CallIcon className="text-primary" />
+                </span>
+                (123)-456-789
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="mailto:carrental@gmail.com"
+                className="font-medium transition-colors hover:text-primary flex items-center gap-1.5"
+              >
+                <span>
+                  <MailIcon className="text-primary" />
+                </span>
+                carrental@gmail.com
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://xpeedstudio.com/"
+                rel="noreferrer nofollow"
+                target="_blank"
+                className="font-light transition-colors hover:text-primary flex items-center"
+              >
+                Design by XpeedStudio
+              </a>
+            </li>
           </ul>
         </div>
         <div className={`${poppins.className}`}>

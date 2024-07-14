@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <div className="flex justify-between items-center w-full px-5 py-7 absolute z-50 top-0  max-w-[calc(1280px+50px)] left-1/2 -translate-x-1/2">
       <Link href="/">
-        <Image src={Logo} alt="Car Rental Logo" width={145} height={52} />
+        <Image src={Logo} alt="Car Rental Logo" width={145} height={52} priority />
       </Link>
       <MobileNav />
       <FullNav />
