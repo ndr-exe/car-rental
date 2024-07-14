@@ -4,40 +4,16 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 
-export default function MobileNav() {
+export default function MobileNav({ navLinks }: { navLinks: NavLinks }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
-
-  const navLinks = [
-    {
-      linkToDisplay: 'Home',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'About',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Vehichle Models',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Testimonials',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Our Team',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Contact',
-      linkTo: '#',
-    },
-  ];
 
   return (
     <div className="flex justify-center items-center lg:hidden ">
@@ -45,14 +21,38 @@ export default function MobileNav() {
         <MenuIcon className="scale-150 " />
       </button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
-        <nav className="py-10">
+        <nav className="py-7 min-w-[max(16.5rem,40vw)]">
           <ul
-            className="h-full  flex flex-col items-center w-[250px]"
+            className="h-full  flex flex-col gap-1.5 items-start  w-fit mx-auto"
             onClick={toggleDrawer(false)}
           >
+            <div className="self-center text-center flex gap-5 items-center mb-5">
+              <li className="">
+                <Link href={'/'} className="hover:text-primary font-medium self-center">
+                  <LoginOutlinedIcon />
+                  &nbsp;Sign in
+                </Link>
+              </li>
+              <li className="">
+                <Link
+                  href={'/'}
+                  className="w-32 h-12 grid place-content-center button-primary font-medium "
+                >
+                  Register
+                </Link>
+              </li>
+            </div>
+
             {navLinks.map((link, idx) => (
-              <li key={idx}>
-                <Link href={link.linkTo}>{link.linkToDisplay}</Link>
+              <li key={idx} className="ml-3">
+                <Link
+                  href={link.linkTo}
+                  className={`hover:text-primary text-lg transition-colors ${
+                    pathname === link.linkTo && 'text-primary'
+                  }`}
+                >
+                  {link.linkToDisplay}
+                </Link>
               </li>
             ))}
           </ul>

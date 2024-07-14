@@ -46,3 +46,10 @@ type Testimonial = {
 };
 
 type Panels = 'panel1' | 'panel2' | 'panel3' | false;
+
+type NavLink = {
+  linkToDisplay: string;
+  linkTo: string;
+};
+
+type NavLinks = NavLink[];

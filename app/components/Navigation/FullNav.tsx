@@ -1,32 +1,10 @@
-import Link from 'next/link';
+'use client';
 
-const FullNav = () => {
-  const navLinks = [
-    {
-      linkToDisplay: 'Home',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'About',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Vehichle Models',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Testimonials',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Our Team',
-      linkTo: '#',
-    },
-    {
-      linkToDisplay: 'Contact',
-      linkTo: '#',
-    },
-  ];
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const FullNav = ({ navLinks }: { navLinks: NavLinks }) => {
+  const pathname = usePathname();
 
   return (
     <nav className="hidden lg:block">
@@ -34,7 +12,12 @@ const FullNav = () => {
         {navLinks.map((link, idx) => {
           return (
             <li key={idx}>
-              <Link href={link.linkTo} className="hover:text-primary transition-colors">
+              <Link
+                href={link.linkTo}
+                className={`hover:text-primary transition-colors ${
+                  pathname === link.linkTo && 'text-primary'
+                }`}
+              >
                 {link.linkToDisplay}
               </Link>
             </li>
