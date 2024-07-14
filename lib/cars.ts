@@ -3,6 +3,7 @@ import { getCarImage } from './selectCarImage';
 export const cars = [
   {
     fullTitle: 'Audi A1 S-Line',
+    shortTitle: 'Audi A1',
     model: 'A1',
     mark: 'Audi',
     year: 2012,
@@ -13,7 +14,7 @@ export const cars = [
     rent: 45,
     showcaseImg: getCarImage('Audi A1 S-Line', true),
     image: getCarImage('Audi A1 S-Line'),
-    rating: 5,
+    rating: 4.5,
     id: 1,
   },
   {
@@ -28,7 +29,7 @@ export const cars = [
     rent: 37,
     showcaseImg: getCarImage('VW Golf 6', true),
     image: getCarImage('VW Golf 6'),
-    rating: 3,
+    rating: 3.5,
     id: 2,
   },
   {
@@ -48,6 +49,7 @@ export const cars = [
   },
   {
     fullTitle: 'BMW 320 ModernLine',
+    shortTitle: 'BMW 320',
     model: '320',
     mark: 'BMW',
     year: 2012,
@@ -63,6 +65,7 @@ export const cars = [
   },
   {
     fullTitle: 'Mercedes-Benz GLK',
+    shortTitle: 'Mercedes GLK',
     model: 'Benz GLK',
     mark: 'Mercedes',
     year: 2006,
@@ -88,7 +91,7 @@ export const cars = [
     rent: 25,
     showcaseImg: getCarImage('VW Passat CC', true),
     image: getCarImage('VW Passat CC'),
-    rating: 5,
+    rating: 4.5,
     id: 6,
   },
 ];

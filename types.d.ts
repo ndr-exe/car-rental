@@ -22,6 +22,7 @@ type Car =
 
 type CarDetails = {
   fullTitle: string;
+  shortTitle?: string;
   model: string;
   mark: string;
   year: number;
