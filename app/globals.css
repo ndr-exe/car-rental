@@ -7,6 +7,23 @@
     @apply text-blackish;
     @apply scroll-smooth;
   }
+
+  ::-webkit-scrollbar {
+    width: 0.65em;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-white;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-md;
+    border: 0.11em solid white;
+  }
+  @supports (scrollbar-color: #ff4d30 #fff) {
+    * {
+      scrollbar-color: #ff4d30 #fff;
+      scrollbar-width: thin;
+    }
+  }
 }
 
 @layer utilities {
