@@ -1,5 +1,5 @@
 import { poppins } from '@/app/fonts';
-import ReserveNowButton from './ReserveNowButton';
+import ScrollToBookingFormButton from '../Header/ScrollToBookingFormButton';
 
 const CarDetailsTable = ({ carDetails }: { carDetails: CarDetails }) => {
   return (
@@ -43,7 +43,14 @@ const CarDetailsTable = ({ carDetails }: { carDetails: CarDetails }) => {
           </tr>
         </tbody>
       </table>
-      <ReserveNowButton />
+      <ScrollToBookingFormButton>
+        <span
+          className={`${poppins.className} block mt-3.5 text-center bg-primary p-2.5 text-white text-xl font-semibold transition-colors shadow-[6px_6px_0] shadow-secondary-lightest
+      hover:bg-primary-darkest`}
+        >
+          Reserve Now
+        </span>
+      </ScrollToBookingFormButton>
     </div>
   );
 };
