@@ -25,7 +25,5 @@ export function getCarImage(car: Car, showcase?: boolean) {
       return showcase ? vwGolfShowcase : vwGolf;
     case 'VW Passat CC':
       return showcase ? vwPassatShowcase : vwPassat;
-    // default:
-    //   return audi;
   }
 }

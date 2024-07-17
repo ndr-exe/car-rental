@@ -37,7 +37,6 @@ const BookingForm = () => {
 
   useEffect(() => {
     const date = new Date().toISOString().slice(0, 10);
-    console.log(date);
     dateRef.current = date;
   }, []);
 
