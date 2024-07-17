@@ -5,7 +5,7 @@ import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'Car Rental Website',
+  title: 'Car Rental',
   description: 'Save big with our car rental',
 };
 
