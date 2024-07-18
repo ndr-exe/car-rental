@@ -3,6 +3,13 @@ import { poppins } from '@/app/fonts';
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/EmailOutlined';
 import LocationIcon from '@mui/icons-material/NearMeOutlined';
+import { Metadata } from 'next';
+import { pageDescriptions } from '@/lib/pageDescriptions';
+
+export const metadata: Metadata = {
+  title: 'Car Rental | Contact',
+  description: pageDescriptions.contact,
+};
 
 const ContactPage = () => {
   return (

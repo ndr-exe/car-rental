@@ -1,5 +1,12 @@
 import Car from '@/app/components/CarModels/Car';
 import { cars } from '@/lib/cars';
+import { pageDescriptions } from '@/lib/pageDescriptions';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Car Rental | Cars',
+  description: pageDescriptions.cars,
+};
 
 const CarModelsPage = () => {
   return (

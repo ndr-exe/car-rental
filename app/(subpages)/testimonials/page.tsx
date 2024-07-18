@@ -1,4 +1,11 @@
 import TestimonialsSection from '@/app/components/Testimonials/TestimonialsSection';
+import { Metadata } from 'next';
+import { pageDescriptions } from '@/lib/pageDescriptions';
+
+export const metadata: Metadata = {
+  title: 'Car Rental | Testimonials',
+  description: pageDescriptions.testimonials,
+};
 
 const TestimonialPage = () => {
   return (

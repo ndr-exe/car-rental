@@ -1,5 +1,12 @@
 import TeamMember from '@/app/components/Team/TeamMember';
 import { team } from '@/lib/team';
+import { Metadata } from 'next';
+import { pageDescriptions } from '@/lib/pageDescriptions';
+
+export const metadata: Metadata = {
+  title: 'Car Rental | Team',
+  description: pageDescriptions.team,
+};
 
 const TeamPage = () => {
   return (

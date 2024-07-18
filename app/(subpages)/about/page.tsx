@@ -5,6 +5,13 @@ import icon2 from '@/public/about/icon2.png';
 import icon3 from '@/public/about/icon3.png';
 import { poppins } from '@/app/fonts';
 import StepsSection from '@/app/components/Steps/StepsSection';
+import { Metadata } from 'next';
+import { pageDescriptions } from '@/lib/pageDescriptions';
+
+export const metadata: Metadata = {
+  title: 'Car Rental | About',
+  description: pageDescriptions.about,
+};
 
 const AboutPage = () => {
   return (
@@ -18,10 +25,9 @@ const AboutPage = () => {
             You start the engine and your adventure begins
           </h2>
           <p className="text-secondary leading-normal mb-10 xs:mb-12">
-            Certain but she but shyness why cottage. Guy the put instrument sir entreaties
-            affronting. Pretended exquisite see cordially the you. Weeks quiet do vexed or whose.
-            Motionless if no to affronting imprudence no precaution. My indulged as disposal
-            strongly attended.
+            Explore our top-tier car rental services designed for every journey. From compact cars
+            to spacious SUVs, enjoy flexible booking and competitive rates. Discover seamless travel
+            with our reliable fleet and exceptional customer service
           </p>
           <ul className="flex flex-col gap-10 xs:flex-row xs:items-center xs:justify-center lg:justify-start ">
             <li className="flex flex-col items-center">
