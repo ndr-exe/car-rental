@@ -2,7 +2,7 @@
 Welcome to the Car Rental Website project! This project is a fully responsive, multi-page website built with Next.js, TypeScript, and Tailwind CSS. It is inspired by a similar project by [stefvndev](https://github.com/stefvndev).
 
 ## Live Demo 👁️
-Check out the live demo at [easycarrental.vercel.app](https://easycarrental.vercel.app/)
+Check out the live demo at [easyrental.vercel.app](https://easyrental.vercel.app/)
 
 
 
