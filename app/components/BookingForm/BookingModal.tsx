@@ -30,7 +30,7 @@ const BookingModal = ({
       >
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <section
-            className={`${poppins.className} w-screen bookingModal md:h-[90vh] bg-white overflow-scroll max-w-[850px]`}
+            className={`${poppins.className} w-screen h-svh md:h-[90vh] bg-white overflow-scroll max-w-[850px]`}
           >
             <div className="">
               <div className="flex justify-between items-center px-4 py-2.5 bg-primary text-white">

@@ -86,18 +86,8 @@
     grid-area: zip;
   }
 
-  .bookingModal {
-    height: 100vh;
-    height: 100svh;
-  }
-
   .FeaturesSection {
     background: url('../public/FeaturesSection/bg.png') -320px 300px / cover no-repeat;
-  }
-  @media only screen and (min-width: 1024px) {
-    .FeaturesSection {
-      background: url('../public/FeaturesSection/bg.png') -120px 270px / cover no-repeat;
-    }
   }
 
   @keyframes appear {
@@ -140,21 +130,16 @@
     grid-template-rows: 1fr !important;
   }
 
-  @media only screen and (min-width: 768px) {
-    .DownloadMobileAppSectionBg {
-      background: url('../public/DownloadApp/appSectionBg.png') top / cover no-repeat;
-    }
-  }
-  @media only screen and (min-width: 1280px) {
-    .DownloadMobileAppSectionBg {
-      background: url('../public/DownloadApp/appSectionBg.png') bottom 50% left 70% / auto no-repeat;
-    }
-  }
-
   .subpageHeaderBg {
     background: url('../public/subpages/subpage-bg.png') bottom left 30% / cover no-repeat,
       #ffffffeb;
     background-blend-mode: screen;
+  }
+
+  .subpageBanner {
+    background: url('../public/subpages/banner.png') bottom center / cover no-repeat,
+      rgba(69, 59, 50, 0.825);
+    background-blend-mode: hue;
   }
 
   @media only screen and (min-width: 640px) {
@@ -166,16 +151,27 @@
       background: url('../public/contact/contact-map-bg.png') center / cover no-repeat;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .DownloadMobileAppSectionBg {
+      background: url('../public/DownloadApp/appSectionBg.png') top / cover no-repeat;
+    }
+  }
+
   @media only screen and (min-width: 1024px) {
     .subpageHeaderBg {
       background: url('../public/subpages/subpage-bg.png') bottom left 75% / cover no-repeat,
         #ffffffeb;
     }
+
+    .FeaturesSection {
+      background: url('../public/FeaturesSection/bg.png') -120px 270px / cover no-repeat;
+    }
   }
 
-  .subpageBanner {
-    background: url('../public/subpages/banner.png') bottom center / cover no-repeat,
-      rgba(69, 59, 50, 0.825);
-    background-blend-mode: hue;
+  @media only screen and (min-width: 1280px) {
+    .DownloadMobileAppSectionBg {
+      background: url('../public/DownloadApp/appSectionBg.png') bottom 50% left 70% / auto no-repeat;
+    }
   }
 }

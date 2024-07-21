@@ -97,7 +97,7 @@ const BookingForm = () => {
             required
             name="car"
             id="car"
-            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput bg-white font-normal outline-none cartype"
           >
             <option value="">Select your car Type</option>
             <option value={cars.audi}>Audi A1 S-Line</option>
@@ -127,7 +127,7 @@ const BookingForm = () => {
             required
             name="pickUpCity"
             id="pickUpCity"
-            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput bg-white font-normal outline-none"
           >
             <option value="">Select pick up location</option>
             <option value={cities[0]}>Tbilisi</option>
@@ -157,7 +157,7 @@ const BookingForm = () => {
             required
             name="dropOffCity"
             id="dropOffCity"
-            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput bg-white font-normal outline-none"
           >
             <option value="">Select pick up location</option>
             <option value={cities[0]}>Tbilisi</option>
@@ -189,7 +189,7 @@ const BookingForm = () => {
             type="date"
             name="pickUpDate"
             id="pickUpDate"
-            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none w-full"
           />
         </div>
 
@@ -213,7 +213,7 @@ const BookingForm = () => {
             type="date"
             name="dropOffDate"
             id="dropOffDate"
-            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none"
+            className="px-3.5 py-3 border border-[#ccd7e6] rounded-[3px] text-[15px] text-formInput font-normal outline-none w-full"
           />
         </div>
 
