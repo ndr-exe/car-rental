@@ -86,6 +86,11 @@
     grid-area: zip;
   }
 
+  .bookingModal {
+    height: 100vh;
+    height: 100svh;
+  }
+
   .FeaturesSection {
     background: url('../public/FeaturesSection/bg.png') -320px 300px / cover no-repeat;
   }
